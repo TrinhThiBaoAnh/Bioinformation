@@ -3,7 +3,7 @@
 ```
 python3 read_vcf.py --path your_path_to_vcf_folder
 ```
-#Running 
+#Train and evaluate
 ```
-p
+python3 create_simulated_data.py
 ```
