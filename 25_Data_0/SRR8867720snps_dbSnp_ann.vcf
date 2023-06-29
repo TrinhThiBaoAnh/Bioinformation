@@ -1,0 +1,905 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=FS_filter,Description="FS > 60.0">
+##FILTER=<ID=LowQual,Description="Low quality">
+##FILTER=<ID=MQRankSum_filter,Description="MQRankSum < -12.5">
+##FILTER=<ID=MQ_filter,Description="MQ < 40.0">
+##FILTER=<ID=QD_filter,Description="QD < 2.0">
+##FILTER=<ID=ReadPosRankSum_filter,Description="ReadPosRankSum < -8.0">
+##FILTER=<ID=SOR_filter,Description="SOR > 4.0">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads with MQ=255 or with bad mates are filtered)">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##GATKCommandLine=<ID=HaplotypeCaller,CommandLine="HaplotypeCaller --output SRR8867720_raw_variants_2.vcf --input SRR8867720_recal.bam --reference /data/hoan/gwas/brca_analysis/reference/GRCh38/GRCh38_latest_genomic.fna --use-posteriors-to-calculate-qual false --dont-use-dragstr-priors false --use-new-qual-calculator true --annotate-with-num-discovered-alleles false --heterozygosity 0.001 --indel-heterozygosity 1.25E-4 --heterozygosity-stdev 0.01 --standard-min-confidence-threshold-for-calling 30.0 --max-alternate-alleles 6 --max-genotype-count 1024 --sample-ploidy 2 --num-reference-samples-if-no-call 0 --genotype-assignment-method USE_PLS_TO_ASSIGN --contamination-fraction-to-filter 0.0 --output-mode EMIT_VARIANTS_ONLY --all-site-pls false --flow-likelihood-parallel-threads 0 --flow-likelihood-optimized-comp false --flow-use-t0-tag false --flow-probability-threshold 0.003 --flow-remove-non-single-base-pair-indels false --flow-remove-one-zero-probs false --flow-quantization-bins 121 --flow-fill-empty-bins-value 0.001 --flow-symmetric-indel-probs false --flow-report-insertion-or-deletion false --flow-disallow-probs-larger-than-call false --flow-lump-probs false --flow-retain-max-n-probs-base-format false --flow-probability-scaling-factor 10 --flow-order-cycle-length 4 --flow-number-of-uncertain-flows-to-clip 0 --flow-nucleotide-of-first-uncertain-flow T --keep-boundary-flows false --gvcf-gq-bands 1 --gvcf-gq-bands 2 --gvcf-gq-bands 3 --gvcf-gq-bands 4 --gvcf-gq-bands 5 --gvcf-gq-bands 6 --gvcf-gq-bands 7 --gvcf-gq-bands 8 --gvcf-gq-bands 9 --gvcf-gq-bands 10 --gvcf-gq-bands 11 --gvcf-gq-bands 12 --gvcf-gq-bands 13 --gvcf-gq-bands 14 --gvcf-gq-bands 15 --gvcf-gq-bands 16 --gvcf-gq-bands 17 --gvcf-gq-bands 18 --gvcf-gq-bands 19 --gvcf-gq-bands 20 --gvcf-gq-bands 21 --gvcf-gq-bands 22 --gvcf-gq-bands 23 --gvcf-gq-bands 24 --gvcf-gq-bands 25 --gvcf-gq-bands 26 --gvcf-gq-bands 27 --gvcf-gq-bands 28 --gvcf-gq-bands 29 --gvcf-gq-bands 30 --gvcf-gq-bands 31 --gvcf-gq-bands 32 --gvcf-gq-bands 33 --gvcf-gq-bands 34 --gvcf-gq-bands 35 --gvcf-gq-bands 36 --gvcf-gq-bands 37 --gvcf-gq-bands 38 --gvcf-gq-bands 39 --gvcf-gq-bands 40 --gvcf-gq-bands 41 --gvcf-gq-bands 42 --gvcf-gq-bands 43 --gvcf-gq-bands 44 --gvcf-gq-bands 45 --gvcf-gq-bands 46 --gvcf-gq-bands 47 --gvcf-gq-bands 48 --gvcf-gq-bands 49 --gvcf-gq-bands 50 --gvcf-gq-bands 51 --gvcf-gq-bands 52 --gvcf-gq-bands 53 --gvcf-gq-bands 54 --gvcf-gq-bands 55 --gvcf-gq-bands 56 --gvcf-gq-bands 57 --gvcf-gq-bands 58 --gvcf-gq-bands 59 --gvcf-gq-bands 60 --gvcf-gq-bands 70 --gvcf-gq-bands 80 --gvcf-gq-bands 90 --gvcf-gq-bands 99 --floor-blocks false --indel-size-to-eliminate-in-ref-model 10 --disable-optimizations false --dragen-mode false --flow-mode NONE --apply-bqd false --apply-frd false --disable-spanning-event-genotyping false --transform-dragen-mapping-quality false --mapping-quality-threshold-for-genotyping 20 --max-effective-depth-adjustment-for-frd 0 --just-determine-active-regions false --dont-genotype false --do-not-run-physical-phasing false --do-not-correct-overlapping-quality false --use-filtered-reads-for-annotations false --use-flow-aligner-for-stepwise-hc-filtering false --adaptive-pruning false --do-not-recover-dangling-branches false --recover-dangling-heads false --kmer-size 10 --kmer-size 25 --dont-increase-kmer-sizes-for-cycles false --allow-non-unique-kmers-in-ref false --num-pruning-samples 1 --min-dangling-branch-length 4 --recover-all-dangling-branches false --max-num-haplotypes-in-population 128 --min-pruning 2 --adaptive-pruning-initial-error-rate 0.001 --pruning-lod-threshold 2.302585092994046 --pruning-seeding-lod-threshold 9.210340371976184 --max-unpruned-variants 100 --linked-de-bruijn-graph false --disable-artificial-haplotype-recovery false --enable-legacy-graph-cycle-detection false --debug-assembly false --debug-graph-transformations false --capture-assembly-failure-bam false --num-matching-bases-in-dangling-end-to-recover -1 --error-correction-log-odds -Infinity --error-correct-reads false --kmer-length-for-read-error-correction 25 --min-observations-for-kmer-to-be-solid 20 --likelihood-calculation-engine PairHMM --base-quality-score-threshold 18 --dragstr-het-hom-ratio 2 --dont-use-dragstr-pair-hmm-scores false --pair-hmm-gap-continuation-penalty 10 --expected-mismatch-rate-for-read-disqualification 0.02 --pair-hmm-implementation FASTEST_AVAILABLE --pcr-indel-model CONSERVATIVE --phred-scaled-global-read-mismapping-rate 45 --disable-symmetric-hmm-normalizing false --disable-cap-base-qualities-to-map-quality false --enable-dynamic-read-disqualification-for-genotyping false --dynamic-read-disqualification-threshold 1.0 --native-pair-hmm-threads 4 --native-pair-hmm-use-double-precision false --flow-hmm-engine-min-indel-adjust 6 --flow-hmm-engine-flat-insertion-penatly 45 --flow-hmm-engine-flat-deletion-penatly 45 --pileup-detection false --pileup-detection-enable-indel-pileup-calling false --num-artificial-haplotypes-to-add-per-allele 5 --artifical-haplotype-filtering-kmer-size 10 --pileup-detection-snp-alt-threshold 0.1 --pileup-detection-indel-alt-threshold 0.5 --pileup-detection-absolute-alt-depth 0.0 --pileup-detection-snp-adjacent-to-assembled-indel-range 5 --pileup-detection-bad-read-tolerance 0.0 --pileup-detection-proper-pair-read-badness true --pileup-detection-edit-distance-read-badness-threshold 0.08 --pileup-detection-chimeric-read-badness true --pileup-detection-template-mean-badness-threshold 0.0 --pileup-detection-template-std-badness-threshold 0.0 --bam-writer-type CALLED_HAPLOTYPES --dont-use-soft-clipped-bases false --override-fragment-softclip-check false --min-base-quality-score 10 --smith-waterman JAVA --emit-ref-confidence NONE --max-mnp-distance 0 --force-call-filtered-alleles false --reference-model-deletion-quality 30 --soft-clip-low-quality-ends false --allele-informative-reads-overlap-margin 2 --smith-waterman-dangling-end-match-value 25 --smith-waterman-dangling-end-mismatch-penalty -50 --smith-waterman-dangling-end-gap-open-penalty -110 --smith-waterman-dangling-end-gap-extend-penalty -6 --smith-waterman-haplotype-to-reference-match-value 200 --smith-waterman-haplotype-to-reference-mismatch-penalty -150 --smith-waterman-haplotype-to-reference-gap-open-penalty -260 --smith-waterman-haplotype-to-reference-gap-extend-penalty -11 --smith-waterman-read-to-haplotype-match-value 10 --smith-waterman-read-to-haplotype-mismatch-penalty -15 --smith-waterman-read-to-haplotype-gap-open-penalty -30 --smith-waterman-read-to-haplotype-gap-extend-penalty -5 --flow-assembly-collapse-hmer-size 0 --flow-assembly-collapse-partial-mode false --flow-filter-alleles false --flow-filter-alleles-qual-threshold 30.0 --flow-filter-alleles-sor-threshold 3.0 --flow-filter-lone-alleles false --flow-filter-alleles-debug-graphs false --min-assembly-region-size 50 --max-assembly-region-size 300 --active-probability-threshold 0.002 --max-prob-propagation-distance 50 --force-active false --assembly-region-padding 100 --padding-around-indels 75 --padding-around-snps 20 --padding-around-strs 75 --max-extension-into-assembly-region-padding-legacy 25 --max-reads-per-alignment-start 50 --enable-legacy-assembly-region-trimming false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --max-variants-per-shard 0 --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false --minimum-mapping-quality 20 --disable-tool-default-annotations false --enable-all-annotations false --allow-old-rms-mapping-quality-annotation-data false",Version="4.3.0.0",Date="February 18, 2023 11:47:54 PM CET">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output SRR8867720_raw_snps_2.vcf --select-type-to-include SNP --variant SRR8867720_raw_variants_2.vcf --reference /data/hoan/gwas/brca_analysis/reference/GRCh38/GRCh38_latest_genomic.fna --invertSelect false --exclude-non-variants false --exclude-filtered false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --fail-on-unsorted-genotype false --genomicsdb-max-alternate-alleles 50 --call-genotypes false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --genomicsdb-use-gcs-hdfs-connector false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --max-variants-per-shard 0 --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.3.0.0",Date="February 18, 2023 11:59:17 PM CET">
+##GATKCommandLine=<ID=VariantFiltration,CommandLine="VariantFiltration --output SRR8867720_filtered_snps_2.vcf --filter-expression QD < 2.0 --filter-expression FS > 60.0 --filter-expression MQ < 40.0 --filter-expression SOR > 4.0 --filter-expression MQRankSum < -12.5 --filter-expression ReadPosRankSum < -8.0 --filter-name QD_filter --filter-name FS_filter --filter-name MQ_filter --filter-name SOR_filter --filter-name MQRankSum_filter --filter-name ReadPosRankSum_filter --variant SRR8867720_raw_snps_2.vcf --reference /data/hoan/gwas/brca_analysis/reference/GRCh38/GRCh38_latest_genomic.fna --cluster-size 3 --cluster-window-size 0 --mask-extension 0 --mask-name Mask --filter-not-in-mask false --missing-values-evaluate-as-failing false --invalidate-previous-filters false --invert-filter-expression false --invert-genotype-filter-expression false --set-filtered-genotype-to-no-call false --apply-allele-specific-filters false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --max-variants-per-shard 0 --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.3.0.0",Date="February 18, 2023 11:59:35 PM CET">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=BaseQRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=ExcessHet,Number=1,Type=Float,Description="Phred-scaled p-value for exact test of excess heterozygosity">
+##INFO=<ID=FS,Number=1,Type=Float,Description="Phred-scaled p-value using Fisher's exact test to detect strand bias">
+##INFO=<ID=InbreedingCoeff,Number=1,Type=Float,Description="Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation">
+##INFO=<ID=MLEAC,Number=A,Type=Integer,Description="Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC), for each ALT allele, in the same order as listed">
+##INFO=<ID=MLEAF,Number=A,Type=Float,Description="Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF), for each ALT allele, in the same order as listed">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQRankSum,Number=1,Type=Float,Description="Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities">
+##INFO=<ID=QD,Number=1,Type=Float,Description="Variant Confidence/Quality by Depth">
+##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias">
+##INFO=<ID=SOR,Number=1,Type=Float,Description="Symmetric Odds Ratio of 2x2 contingency table to detect strand bias">
+##contig=<ID=NC_000001.11,length=248956422,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187361.1,length=175055,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187362.1,length=32032,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187363.1,length=127682,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187364.1,length=66860,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187365.1,length=40176,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187366.1,length=42210,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187367.1,length=176043,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187368.1,length=40745,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187369.1,length=41717,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000002.12,length=242193529,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187370.1,length=161471,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187371.1,length=153799,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000003.12,length=198295559,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167215.1,length=155397,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000004.12,length=190214555,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113793.3,length=209709,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000005.10,length=181538259,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113948.1,length=92689,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000006.12,length=170805979,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000007.14,length=159345973,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000008.11,length=145138636,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000009.12,length=138394717,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187372.1,length=40062,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187373.1,length=38054,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187374.1,length=176845,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187375.1,length=39050,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000010.11,length=133797422,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000011.10,length=135086622,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000012.12,length=133275309,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000013.11,length=114364328,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000014.9,length=107043718,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113796.3,length=201709,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167219.1,length=211173,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187377.1,length=194050,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113888.1,length=191469,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187378.1,length=38115,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187379.1,length=39555,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187380.1,length=172810,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187381.1,length=43739,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000015.10,length=101991189,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187382.1,length=448248,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000016.10,length=90338345,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187383.1,length=1872759,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000017.11,length=83257441,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113930.2,length=185591,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187384.1,length=280839,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187385.1,length=112551,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000018.10,length=80373285,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000019.10,length=58617616,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000020.11,length=64444167,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000021.9,length=46709983,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000022.11,length=50818468,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187386.1,length=150754,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187387.1,length=41543,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187388.1,length=179772,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187390.1,length=42811,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187391.1,length=181920,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187392.1,length=103838,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187393.1,length=99375,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187394.1,length=73985,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000023.11,length=156040895,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_000024.10,length=57227415,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187395.1,length=37240,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187396.1,length=2274,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187397.1,length=2165,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187398.1,length=1942,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187399.1,length=1472,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187400.1,length=21476,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187401.1,length=4416,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187402.1,length=1201,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187403.1,length=1444,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187404.1,length=2276,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187405.1,length=998,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187406.1,length=12399,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187407.1,length=37690,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187408.1,length=1179,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187409.1,length=2646,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187410.1,length=2489,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187411.1,length=1029,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187412.1,length=2145,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187413.1,length=2321,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187414.1,length=2140,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187415.1,length=2043,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187416.1,length=1445,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187417.1,length=981,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187418.1,length=1884,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187419.1,length=1361,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187420.1,length=392061,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187421.1,length=1233,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187422.1,length=1774,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187423.1,length=3920,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187424.1,length=92983,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187425.1,length=112505,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187426.1,length=4055,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187427.1,length=2415,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187428.1,length=2318,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187429.1,length=2186,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187430.1,length=1951,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187431.1,length=1300,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187432.1,length=22689,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187433.1,length=138126,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187434.1,length=5674,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187435.1,length=8127,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187436.1,length=6361,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187437.1,length=5353,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187438.1,length=3253,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187439.1,length=1899,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187440.1,length=2983,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187441.1,length=2168,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187442.1,length=993,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187443.1,length=91309,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187444.1,length=1202,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187445.1,length=1599,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187446.1,length=1400,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187447.1,length=2969,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187448.1,length=1553,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187449.1,length=7046,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187450.1,length=31033,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187451.1,length=44474,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187452.1,length=4685,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187453.1,length=4513,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187454.1,length=6504,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187455.1,length=6158,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187456.1,length=3041,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187457.1,length=5796,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187458.1,length=1652,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187459.1,length=1040,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187460.1,length=1368,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187461.1,length=2699,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187462.1,length=1048,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187463.1,length=1428,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187464.1,length=1428,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187465.1,length=1026,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187466.1,length=1121,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187467.1,length=1803,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187468.1,length=2855,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187469.1,length=3530,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187470.1,length=8320,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187471.1,length=1048,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187472.1,length=1045,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187473.1,length=1298,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187474.1,length=2387,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187475.1,length=1537,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187476.1,length=1143,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187477.1,length=1880,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187478.1,length=1216,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187479.1,length=970,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187480.1,length=1788,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187481.1,length=1484,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187482.1,length=1750,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187483.1,length=1308,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187484.1,length=1658,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187485.1,length=971,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187486.1,length=1930,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187487.1,length=990,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187488.1,length=4215,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187489.1,length=1136,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187490.1,length=2656,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187491.1,length=1650,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187492.1,length=1451,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187493.1,length=2378,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187494.1,length=2805,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187495.1,length=7992,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187496.1,length=7642,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113901.1,length=182896,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167213.1,length=179198,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167214.1,length=161802,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167218.1,length=179693,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187497.1,length=157432,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167220.1,length=15008,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167208.1,length=164239,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187498.1,length=210658,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187499.1,length=168472,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187500.1,length=41891,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187501.1,length=66486,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187502.1,length=198735,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187503.1,length=93321,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187504.1,length=158759,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187505.1,length=148850,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187506.1,length=150742,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187508.1,length=62944,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187509.1,length=40191,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187510.1,length=36723,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187511.1,length=79590,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187512.1,length=71251,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167209.1,length=137718,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187513.1,length=186739,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167211.2,length=176608,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113889.1,length=161147,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132914.1,length=467143,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015495298.1,length=278659,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791756.1,length=1572686,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332688.1,length=305542,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_014040926.1,length=349938,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646195.1,length=166200,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654706.1,length=166136,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805487.1,length=44955,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646194.1,length=186494,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654707.1,length=140355,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_014040925.1,length=141019,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017852928.1,length=551020,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646196.1,length=122022,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791753.1,length=516764,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791758.1,length=211934,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791759.1,length=250447,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791754.1,length=847441,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332687.1,length=460100,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654708.1,length=330031,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_014040927.1,length=212205,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791757.1,length=210426,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791755.1,length=335159,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159988.1,length=84043,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791767.1,length=244725,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791768.1,length=174385,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791766.1,length=489404,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791763.1,length=284971,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132915.1,length=481245,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791760.1,length=431782,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791765.1,length=955087,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654709.1,length=181658,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791762.1,length=500581,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791761.1,length=535251,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791764.1,length=120381,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015495299.1,length=535088,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654710.1,length=140361,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332690.1,length=365499,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159987.1,length=145975,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332689.1,length=208149,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363813.1,length=411654,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791770.1,length=301310,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791771.1,length=475876,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646197.1,length=451168,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132916.1,length=373699,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332691.1,length=415308,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159989.1,length=215443,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654711.1,length=175849,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132917.1,length=165718,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646198.1,length=305979,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805491.1,length=105527,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805492.1,length=195063,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805490.1,length=302885,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805489.1,length=197752,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805488.1,length=164041,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791769.1,length=469342,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159990.1,length=235734,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159993.1,length=176674,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171799.1,length=90922,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791774.1,length=205691,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159992.1,length=53476,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159994.1,length=125549,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159991.1,length=341066,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159995.1,length=276109,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171800.1,length=163749,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171801.1,length=236512,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791772.1,length=308682,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363814.1,length=420675,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791773.1,length=113364,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015495301.1,length=205407,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015495300.1,length=230434,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791777.1,length=2101585,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654712.1,length=135987,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791776.1,length=208405,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646199.1,length=139087,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107297.1,length=362221,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791779.1,length=302485,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159996.1,length=89956,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791778.1,length=508332,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107298.1,length=673059,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791775.1,length=34400,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654713.1,length=242796,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171803.1,length=82315,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791780.1,length=383128,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132918.1,length=320750,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646200.1,length=268330,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171802.1,length=245716,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363815.1,length=139427,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159997.1,length=73265,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159998.1,length=254759,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805493.1,length=172555,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791781.1,length=464417,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017852929.1,length=142129,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017852930.1,length=468267,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654714.1,length=589656,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654715.1,length=680662,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132919.1,length=179932,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791785.1,length=429744,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654717.1,length=6367528,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017852932.1,length=265876,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791782.1,length=150302,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017852931.1,length=156998,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791784.1,length=106905,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805494.1,length=103072,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791786.1,length=207371,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654716.1,length=165120,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791783.1,length=39290,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171804.1,length=163882,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171805.1,length=134099,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791789.1,length=569668,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791787.1,length=340717,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791788.1,length=482250,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646201.1,length=330164,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021159999.1,length=25408,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160000.1,length=454963,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332694.1,length=420164,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160001.1,length=292944,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171806.1,length=185507,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646202.1,length=277797,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171807.1,length=264545,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791790.1,length=196262,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332693.1,length=85284,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332692.1,length=14347,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015148966.2,length=204999,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791792.1,length=434831,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160004.1,length=270122,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791794.1,length=122722,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332695.1,length=203552,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160006.1,length=170928,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805496.1,length=279644,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805495.1,length=305244,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363816.1,length=140877,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791793.1,length=344606,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805498.1,length=181167,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160005.1,length=217075,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160003.1,length=165419,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805497.1,length=301637,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171808.1,length=181958,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160002.1,length=45257,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791791.1,length=261194,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646203.1,length=108875,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171809.1,length=109323,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654718.1,length=1046838,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160008.1,length=192531,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332696.1,length=541038,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646204.1,length=211377,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791795.1,length=104537,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654720.1,length=174808,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015148967.1,length=315610,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654719.1,length=64689,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332697.1,length=86533,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805499.1,length=154139,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160007.1,length=297568,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160012.1,length=409912,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332699.1,length=356766,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171810.1,length=168146,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160009.1,length=7309,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646205.1,length=35455,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332700.1,length=148762,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171811.1,length=123480,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160010.1,length=158944,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160011.1,length=65394,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332698.1,length=206320,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160013.1,length=399183,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791796.1,length=722645,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654722.1,length=690932,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160014.1,length=264228,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654721.1,length=171798,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_011332701.1,length=4998962,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160018.1,length=396515,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160017.1,length=5500449,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132920.1,length=2365364,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791798.1,length=204007,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160016.1,length=369264,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791797.1,length=1154574,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160015.1,length=97763,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791799.1,length=87715,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171812.1,length=59016,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805500.1,length=480415,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017852933.1,length=1927115,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160019.1,length=270967,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171813.1,length=267463,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654723.1,length=78609,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_012132921.1,length=169136,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791800.1,length=334997,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363817.1,length=281919,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160020.1,length=137908,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107299.1,length=154723,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363819.1,length=276292,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791803.1,length=538541,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791801.1,length=372839,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363818.1,length=246895,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805501.1,length=116753,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791806.1,length=172609,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791802.1,length=234878,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791805.1,length=187626,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160021.1,length=56695,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791804.1,length=144689,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805503.1,length=163186,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_014040928.1,length=205101,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_019805502.1,length=230843,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_013171814.1,length=407387,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654724.1,length=93070,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791809.1,length=226166,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791810.1,length=89211,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791807.1,length=333754,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160022.1,length=493165,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_014040929.1,length=405389,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791808.1,length=137818,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646206.1,length=370917,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107300.1,length=163926,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107301.1,length=170206,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107302.1,length=168131,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107303.1,length=293522,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107304.1,length=241058,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107305.1,length=159285,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107306.1,length=178197,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107307.1,length=166713,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107308.1,length=99845,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107309.1,length=161095,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107310.1,length=223118,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107311.1,length=100553,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107313.1,length=171263,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107314.1,length=145691,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_016107312.1,length=156965,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791811.1,length=273725,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791812.1,length=355731,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160023.1,length=519485,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791813.1,length=336752,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791814.1,length=1020778,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791815.1,length=189707,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160026.1,length=412368,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160024.1,length=461303,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646207.1,length=156562,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_014040930.1,length=155930,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_014040931.1,length=174749,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646208.1,length=153027,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015148968.1,length=145162,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160025.1,length=12295,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_015148969.2,length=101040,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_017363820.1,length=188004,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160031.1,length=17435,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791820.1,length=330493,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160028.1,length=28824,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791816.1,length=68810,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160029.1,length=68192,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791817.1,length=140567,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160027.1,length=403128,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791819.1,length=294119,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_021160030.1,length=14678,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791818.1,length=619716,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654725.1,length=48370,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_025791821.1,length=865743,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_018654726.1,length=209722,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_009646209.1,length=101150,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187515.1,length=354444,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187517.1,length=256271,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187514.1,length=109528,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187520.1,length=185285,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315905.1,length=182439,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315906.1,length=110268,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315907.2,length=366580,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187521.1,length=50258,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187519.1,length=911658,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187516.1,length=425601,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187518.1,length=165834,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187525.1,length=136240,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187526.1,length=70887,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187529.1,length=223625,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187522.1,length=120616,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315908.1,length=143390,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187524.1,length=133041,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187531.1,length=138019,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187530.1,length=110395,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187528.1,length=110099,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571033.2,length=96131,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315909.1,length=123821,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187527.1,length=174166,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187523.1,length=161578,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003871060.2,length=173151,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187535.1,length=109187,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187537.1,length=224108,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315913.1,length=180671,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187533.1,length=173649,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187536.1,length=248252,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187538.1,length=113034,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187532.1,length=205312,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187534.1,length=162429,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187539.1,length=184404,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187540.1,length=220246,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315915.1,length=376187,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187541.1,length=111943,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167250.2,length=586476,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187544.1,length=158965,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315914.1,length=164536,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187542.1,length=119912,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187545.1,length=205944,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187543.1,length=244096,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187550.1,length=126136,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187548.1,length=179043,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187547.1,length=195710,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315920.1,length=82728,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571036.1,length=226852,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187551.1,length=164558,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315917.2,length=1612928,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315918.1,length=101241,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187549.1,length=172708,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315919.1,length=173459,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187546.1,length=131892,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167244.2,length=4672374,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187555.1,length=175808,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187554.1,length=152148,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315921.1,length=124736,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187556.1,length=870480,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187557.1,length=75005,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_004166862.2,length=185823,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187552.1,length=197536,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187553.1,length=271782,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187558.1,length=157952,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187561.1,length=209586,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187559.1,length=158166,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315922.2,length=119183,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187562.1,length=1111570,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187564.1,length=271455,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187563.1,length=126434,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187560.1,length=209988,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187572.1,length=145606,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187568.1,length=282736,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187565.1,length=292436,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187576.1,length=985506,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187570.1,length=300230,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187577.1,length=624492,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187566.1,length=141812,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187567.1,length=374415,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187574.1,length=133535,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187575.1,length=36640,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187573.1,length=158983,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187571.1,length=305841,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187569.1,length=132244,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315928.1,length=162988,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315929.1,length=71551,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315930.1,length=171286,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315931.1,length=60032,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187578.1,length=439082,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315934.1,length=179254,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187579.1,length=181496,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315935.1,length=309802,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187586.1,length=210133,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187584.1,length=177092,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187585.1,length=296895,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187583.1,length=204059,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315936.1,length=154407,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003871073.1,length=200998,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003871074.1,length=191409,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187582.1,length=67707,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187581.1,length=186169,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571049.1,length=167313,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571050.1,length=408271,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187588.1,length=40090,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315938.1,length=120804,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187587.1,length=238139,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315939.2,length=169178,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315941.1,length=138655,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315942.2,length=152874,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187590.1,length=119498,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315940.1,length=184319,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187589.1,length=76061,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187591.1,length=56134,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187594.1,length=191684,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187593.1,length=180306,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187597.1,length=103832,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187595.1,length=169134,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187592.1,length=306913,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187596.1,length=37287,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187598.1,length=322166,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187601.1,length=1511111,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187599.1,length=180703,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187600.1,length=1351393,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187602.1,length=478999,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187604.1,length=263054,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187603.1,length=327382,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315943.1,length=296527,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187605.1,length=244917,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315944.2,length=388773,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187606.1,length=430880,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187610.1,length=134193,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187609.1,length=63982,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187608.1,length=232857,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187607.1,length=2659700,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315945.1,length=192462,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315946.1,length=89672,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315952.3,length=375691,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187613.1,length=391357,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187611.1,length=196688,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187614.1,length=2877074,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003871091.1,length=278131,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003871092.1,length=70345,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315953.2,length=133151,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167251.2,length=1821992,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315954.1,length=223995,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187615.1,length=235827,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187616.1,length=108763,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315955.1,length=90219,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187612.1,length=178921,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187618.1,length=111737,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315956.1,length=289831,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315959.1,length=164789,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315960.1,length=198278,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315957.1,length=104552,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315958.1,length=167950,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315961.1,length=159547,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187617.1,length=167999,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187622.1,length=61734,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187621.1,length=52969,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315962.1,length=385657,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315964.2,length=170222,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315965.1,length=188024,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315963.1,length=155864,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187619.1,length=43156,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187620.1,length=233762,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571054.1,length=987716,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315966.2,length=128386,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187623.1,length=118774,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187625.1,length=58661,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187624.1,length=183433,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315967.2,length=63917,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187628.1,length=166743,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187627.1,length=143900,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315968.2,length=201197,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315969.2,length=74653,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315970.2,length=116689,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187626.1,length=82692,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187629.1,length=259914,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187632.1,length=186262,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187633.1,length=304135,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187630.1,length=263666,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187631.1,length=101331,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315972.2,length=96924,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003315971.2,length=162811,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187634.1,length=284869,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187635.1,length=144206,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187646.1,length=162212,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187648.1,length=214158,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187647.1,length=161218,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187649.1,length=162896,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187650.1,length=378547,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187651.1,length=1144418,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187652.1,length=130957,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113891.3,length=4795265,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187653.1,length=190869,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187655.1,length=136959,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187654.1,length=318687,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187656.1,length=106711,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187657.1,length=214625,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187658.1,length=572349,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187659.1,length=196384,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187660.1,length=5161414,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187662.1,length=137721,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187664.1,length=157099,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187661.1,length=325800,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003871093.1,length=88070,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187663.1,length=1423190,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187665.1,length=174061,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187666.1,length=157710,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571055.2,length=729520,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_004504305.1,length=74013,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187667.1,length=274009,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187678.1,length=166540,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187679.1,length=555799,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167245.2,length=4604811,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187680.1,length=229282,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187681.1,length=218612,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571056.2,length=1064304,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187682.1,length=176103,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187688.1,length=163458,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167246.2,length=4677643,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571057.2,length=1091841,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187689.1,length=197351,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167247.2,length=4827813,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571058.2,length=1066390,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187690.1,length=164170,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167248.2,length=4606388,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571059.2,length=1002683,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187691.1,length=165607,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_167249.2,length=4929269,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571060.1,length=987100,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187692.1,length=76752,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NW_003571061.2,length=796479,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187693.1,length=1066800,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187636.1,length=248807,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187637.1,length=170399,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187638.1,length=157053,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187639.1,length=171027,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187640.1,length=204239,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187641.1,length=209512,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187642.1,length=155532,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187643.1,length=170698,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187644.1,length=184499,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187645.1,length=170680,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187668.1,length=205194,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187669.1,length=170665,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187670.1,length=184516,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187671.1,length=190932,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187672.1,length=123111,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187673.1,length=170701,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187674.1,length=198005,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187675.1,length=282224,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187676.1,length=187935,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187677.1,length=189352,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187683.1,length=186203,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187684.1,length=200773,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187685.1,length=170148,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187686.1,length=215732,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_187687.1,length=170537,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NT_113949.2,length=177381,assembly=GRCh38_latest_genomic.fna>
+##contig=<ID=NC_012920.1,length=16569,assembly=GRCh38_latest_genomic.fna>
+##reference=file:///data/hoan/gwas/brca_analysis/reference/GRCh38/GRCh38_latest_genomic.fna
+##source=HaplotypeCaller
+##source=SelectVariants
+##source=VariantFiltration
+##SnpSiftVersion="SnpSift 5.1d (build 2022-04-19 15:50), by Pablo Cingolani"
+##SnpSiftCmd="SnpSift Annotate /data/hoan/gwas/brca_analysis/reference/GRCh38/GRCh38_latest_dbSNP_all.vcf /data/hoan/gwas/Diep/Output0/Batch2/out/filtered_snps/SRR8867720_filtered_snps_2.vcf"
+##INFO=<ID=dbSNPBuildID,Number=1,Type=Integer,Description="First dbSNP Build for RS">
+##INFO=<ID=NSF,Number=0,Type=Flag,Description="Has non-synonymous frameshift A coding region variation where one allele in the set changes all downstream amino acids. FxnClass = 44">
+##INFO=<ID=R3,Number=0,Type=Flag,Description="In 3' gene region FxnCode = 13">
+##INFO=<ID=R5,Number=0,Type=Flag,Description="In 5' gene region FxnCode = 15">
+##INFO=<ID=CLNSIG,Number=.,Type=String,Description="Variant Clinical Significance, 0 - Uncertain significance, 1 - not provided, 2 - Benign, 3 - Likely benign, 4 - Likely pathogenic, 5 - Pathogenic, 6 - drug response, 8 - confers sensitivity, 9 - risk-factor, 10 - association, 11 - protective, 12 - conflict, 13 - affects, 255 - other">
+##INFO=<ID=NSN,Number=0,Type=Flag,Description="Has non-synonymous nonsense A coding region variation where one allele in the set changes to STOP codon (TER). FxnClass = 41">
+##INFO=<ID=NSM,Number=0,Type=Flag,Description="Has non-synonymous missense A coding region variation where one allele in the set changes protein peptide. FxnClass = 42">
+##INFO=<ID=CLNORIGIN,Number=.,Type=String,Description="Allele Origin. One or more of the following values may be summed: 0 - unknown; 1 - germline; 2 - somatic; 4 - inherited; 8 - paternal; 16 - maternal; 32 - de-novo; 64 - biparental; 128 - uniparental; 256 - not-tested; 512 - tested-inconclusive; 1073741824 - other">
+##INFO=<ID=CLNREVSTAT,Number=.,Type=String,Description="ClinVar Review Status: no_assertion - No asserition provided by submitter, no_criteria - No assertion criteria provided by submitter, single - Classified by single submitter, mult - Classified by multiple submitters, conf - Criteria provided conflicting interpretations, exp - Reviewed by expert panel, guideline - Practice guideline">
+##INFO=<ID=COMMON,Number=0,Type=Flag,Description="RS is a common SNP.  A common SNP is one that has at least one 1000Genomes population with a minor allele of frequency >= 1% and for which 2 or more founders contribute to that minor allele frequency.">
+##INFO=<ID=RS,Number=1,Type=Integer,Description="dbSNP ID (i.e. rs number)">
+##INFO=<ID=GNO,Number=0,Type=Flag,Description="Genotypes available.">
+##INFO=<ID=FREQ,Number=.,Type=String,Description="An ordered list of allele frequencies as reported by various genomic studies, starting with the reference allele followed by alternate alleles as ordered in the ALT column. When not already in the dbSNP allele set, alleles from the studies are added to the ALT column.  The minor allele, which was previuosly reported in VCF as the GMAF, is the second largest value in the list.  This is the GMAF reported on the RefSNP and EntrezSNP pages and VariationReporter">
+##INFO=<ID=ASS,Number=0,Type=Flag,Description="In acceptor splice site FxnCode = 73">
+##INFO=<ID=U3,Number=0,Type=Flag,Description="In 3' UTR Location is in an untranslated region (UTR). FxnCode = 53">
+##INFO=<ID=U5,Number=0,Type=Flag,Description="In 5' UTR Location is in an untranslated region (UTR). FxnCode = 55">
+##INFO=<ID=CLNACC,Number=.,Type=String,Description="For each allele (comma delimited), this is a pipe-delimited list of the Clinvar RCV phenotype accession.version strings associated with that allele.">
+##INFO=<ID=CLNDN,Number=.,Type=String,Description="Preferred ClinVar disease name">
+##INFO=<ID=DSS,Number=0,Type=Flag,Description="In donor splice-site FxnCode = 75">
+##INFO=<ID=SYN,Number=0,Type=Flag,Description="Has synonymous A coding region variation where one allele in the set does not change the encoded amino acid. FxnCode = 3">
+##INFO=<ID=CLNVI,Number=.,Type=String,Description="Variant Identifiers provided and maintained by organizations outside of NCBI, such as OMIM.  Source and id separated by colon (:).  Each identifier is separated by a vertical bar (|)">
+##INFO=<ID=VC,Number=1,Type=String,Description="Variation Class">
+##INFO=<ID=SAO,Number=1,Type=Integer,Description="Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both">
+##INFO=<ID=PSEUDOGENEINFO,Number=1,Type=String,Description="Pairs each of pseudogene symbol:gene id.  The pseudogene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)">
+##INFO=<ID=CLNDISDB,Number=.,Type=String,Description="Variant disease database name and ID, separated by colon (:)">
+##INFO=<ID=GENEINFO,Number=1,Type=String,Description="Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|).  Does not include pseudogenes.">
+##INFO=<ID=INT,Number=0,Type=Flag,Description="In Intron FxnCode = 6">
+##INFO=<ID=PUB,Number=0,Type=Flag,Description="RefSNP or associated SubSNP is mentioned in a publication">
+##INFO=<ID=CLNHGVS,Number=.,Type=String,Description="Variant names from HGVS.    The order of these variants corresponds to the order of the info in the other clinical  INFO tags.">
+##INFO=<ID=SSR,Number=1,Type=Integer,Description="Variant Suspect Reason Codes (may be more than one value added together) 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed, 1024 - other">
+##INFO=<ID=PM,Number=0,Type=Flag,Description="Variant has associated publication">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SRR8867720
+NC_000001.11	15762710	rs7512358	G	A	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=2.303;COMMON;FREQ=1000Genomes:0.05811,0.9419,.|ALSPAC:0.05112,0.9489,.|Estonian:0.06183,0.9382,.|GENOME_DK:0.1,0.9,.|GnomAD:0.04546,0.9545,.|GoNL:0.0481,0.9519,.|HapMap:0.05391,0.9461,.|KOREAN:0.05802,0.942,0|Korea1K:0.05895,0.941,.|NorthernSweden:0.04167,0.9583,.|Qatari:0.09259,0.9074,.|SGDP_PRJ:0.04839,0.9516,.|Siberian:0.05357,0.9464,.|TOMMO:0.07727,0.9227,.|TOPMED:0.04453,0.9555,.|TWINSUK:0.04018,0.9598,.|Vietnamese:0.07944,0.9206,.|dbGaP_PopFreq:0.04292,0.9571,0;GENEINFO=FBLIM1:54751;GNO;INT;R5;RS=7512358;SSR=0;VC=SNV;dbSNPBuildID=116	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000001.11	30796414	.	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000001.11	212829044	.	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000001.11	220112461	.	A	G	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000002.12	19957023	rs1018976028	C	T	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;FREQ=GnomAD:1,.,7.134e-06|TOMMO:0.9999,5.967e-05,.|TOPMED:1,.,3.982e-05|dbGaP_PopFreq:1,.,0;GENEINFO=WDR35:57539;GNO;INT;RS=1018976028;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000002.12	137487080	.	A	G	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000002.12	141424407	rs10432345	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.7674,.,0.2326|ALSPAC:0.6863,.,0.3137|Estonian:0.7134,.,0.2866|GENOME_DK:0.7,.,0.3|GoNL:0.6884,.,0.3116|KOREAN:0.6843,.,0.3157|Korea1K:0.7096,.,0.2904|NorthernSweden:0.6567,.,0.3433|Qatari:0.787,.,0.213|SGDP_PRJ:0.3876,.,0.6124|Siberian:0.3438,.,0.6562|TOMMO:0.6559,.,0.3441|TOPMED:0.7115,.,0.2885|TWINSUK:0.6748,.,0.3252|Vietnamese:0.9009,.,0.09906|dbGaP_PopFreq:0.8118,0,0.1882;GENEINFO=LRP1B:53353;GNO;INT;R5;RS=10432345;SSR=0;VC=SNV;dbSNPBuildID=119	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000002.12	141424421	.	T	C	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000002.12	220312091	rs7597161	G	T	53.3	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=13.33;SOR=0.693;COMMON;FREQ=1000Genomes:0.3393,.,0.6607|ALSPAC:0.2885,.,0.7115|Estonian:0.2868,.,0.7132|GENOME_DK:0.325,.,0.675|GoNL:0.3116,.,0.6884|KOREAN:0.458,0,0.542|Korea1K:0.4612,.,0.5388|NorthernSweden:0.305,.,0.695|Qatari:0.3472,.,0.6528|SGDP_PRJ:0.2469,.,0.7531|Siberian:0.25,.,0.75|TOMMO:0.4328,.,0.5672|TOPMED:0.3014,.,0.6986|TWINSUK:0.278,.,0.722|Vietnamese:0.4579,.,0.5421|dbGaP_PopFreq:0.3593,0,0.6407;GENEINFO=LOC105373893:105373893;GNO;INT;R3;RS=7597161;SSR=0;VC=SNV;dbSNPBuildID=116	GT:AD:DP:GQ:PL	1/1:0,4:4:11:67,11,0
+NC_000002.12	234237997	rs993931454	T	C	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;FREQ=TOPMED:1,2.267e-05,.|dbGaP_PopFreq:1,0,.;GNO;RS=993931454;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000003.12	184061364	.	T	A	39.32	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=46.00;QD=19.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:51,6,0
+NC_000004.12	15875723	rs1264603112	G	A	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693;FREQ=GnomAD:1,0|TOPMED:1,7.556e-06|dbGaP_PopFreq:1,0;GNO;RS=1264603112;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000004.12	88847148	.	A	C	36.32	PASS	AC=2;AF=1.00;AN=2;DP=3;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=2.303	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000004.12	165104881	rs4690801	C	T	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;COMMON;FREQ=1000Genomes:0.3518,.,0.6482|ALSPAC:0.2265,.,0.7735|Daghestan:0.2086,.,0.7914|Estonian:0.1942,.,0.8058|GENOME_DK:0.225,.,0.775|GnomAD:0.3359,.,0.6641|GoNL:0.1994,.,0.8006|HGDP_Stanford:0.298,.,0.702|HapMap:0.4376,.,0.5624|KOREAN:0.3543,.,0.6457|Korea1K:0.3433,.,0.6567|NorthernSweden:0.1783,.,0.8217|PAGE_STUDY:0.4034,.,0.5966|PRJEB36033:0.1429,.,0.8571|PRJEB37584:0.3253,.,0.6747|Qatari:0.2315,.,0.7685|SGDP_PRJ:0.1885,.,0.8115|Siberian:0.26,.,0.74|TOMMO:0.3295,.,0.6705|TOPMED:0.3413,.,0.6587|TWINSUK:0.2244,.,0.7756|Vietnamese:0.2944,.,0.7056|dbGaP_PopFreq:0.2351,0,0.7649;GENEINFO=TMEM192:201931;GNO;INT;RS=4690801;SSR=0;VC=SNV;dbSNPBuildID=111	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000004.12	171911421	.	G	C	41.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=20.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:53,6,0
+NC_000004.12	171911428	.	A	C	41.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=20.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:53,6,0
+NC_000005.10	66664125	.	A	G	126.14	PASS	AC=2;AF=1.00;AN=2;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=59.67;QD=31.54;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,4:4:12:140,12,0
+NC_000005.10	66664159	rs10061848	G	C	34.04	PASS	AC=2;AF=1.00;AN=2;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=59.67;QD=6.81;SOR=1.022;COMMON;FREQ=1000Genomes:0.4269,.,0.5731,.|ALSPAC:0.5706,.,0.4294,.|Estonian:0.5871,.,0.4129,.|GENOME_DK:0.45,.,0.55,.|GnomAD:0.5135,.,0.4865,.|GoNL:0.5972,.,0.4028,.|KOREAN:0.3648,0,0.6352,0|Korea1K:0.3499,.,0.6501,.|NorthernSweden:0.5667,.,0.4333,.|Qatari:0.5417,.,0.4583,.|SGDP_PRJ:0.3009,.,0.6991,.|Siberian:0.3333,.,0.6667,.|TOMMO:0.3656,.,0.6344,.|TOPMED:0.502,.,0.498,.|TWINSUK:0.5685,.,0.4315,.|Vietnamese:0.5192,.,0.4808,.|dbGaP_PopFreq:0.7079,.,0.2921,0;GENEINFO=MAST4:375449;GNO;INT;R5;RS=10061848;SSR=0;VC=SNV;dbSNPBuildID=119	GT:AD:DP:GQ:PL	1/1:0,5:5:13:48,13,0
+NC_000005.10	139069009	.	C	G	34.04	PASS	AC=2;AF=1.00;AN=2;DP=13;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=55.64;QD=6.81;SOR=1.981	GT:AD:DP:GQ:PL	1/1:0,5:5:13:48,13,0
+NC_000005.10	148011385	rs767142935	G	A	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;FREQ=ALSPAC:1,0,.|GnomAD:0.9999,5.706e-05,.|TOMMO:0.9996,0.0004177,.|TOPMED:0.9999,7.964e-05,.|TWINSUK:0.9997,0.0002697,.|dbGaP_PopFreq:0.9999,7.118e-05,0;GNO;RS=767142935;SSR=0;VC=SNV;dbSNPBuildID=144	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000006.12	17521752	rs7769963	C	T	85.14	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=21.29;SOR=0.693;COMMON;FREQ=1000Genomes:0.7081,0.2919|ALSPAC:0.5332,0.4668|Estonian:0.5467,0.4533|GENOME_DK:0.525,0.475|GnomAD:0.6634,0.3366|GoNL:0.5802,0.4198|HGDP_Stanford:0.6641,0.3359|HapMap:0.7248,0.2752|KOREAN:0.5846,0.4154|Korea1K:0.5617,0.4383|NorthernSweden:0.5517,0.4483|PRJEB36033:0.56,0.44|Qatari:0.7361,0.2639|SGDP_PRJ:0.3648,0.6352|Siberian:0.3333,0.6667|TOMMO:0.5266,0.4734|TOPMED:0.6778,0.3222|TWINSUK:0.5391,0.4609|Vietnamese:0.7143,0.2857|dbGaP_PopFreq:0.6029,0.3971;GENEINFO=CAP2:10486;GNO;INT;RS=7769963;SSR=0;VC=SNV;dbSNPBuildID=116	GT:AD:DP:GQ:PL	1/1:0,4:4:12:99,12,0
+NC_000006.12	151776562	rs2504068	C	G	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;COMMON;FREQ=1000Genomes:0.3804,.,0.6196,.|ALSPAC:0.4224,.,0.5776,.|Estonian:0.3634,.,0.6366,.|GENOME_DK:0.45,.,0.55,.|GoNL:0.4569,.,0.5431,.|KOREAN:0.2505,0,0.7495,.|Korea1K:0.2691,.,0.7309,.|NorthernSweden:0.3417,.,0.6583,.|Qatari:0.4213,.,0.5787,.|SGDP_PRJ:0.2554,.,0.7446,.|Siberian:0.1957,.,0.8043,.|TOMMO:0.2759,.,0.7241,.|TOPMED:0.411,.,0.589,.|TWINSUK:0.4326,.,0.5674,.|Vietnamese:0.3252,.,0.6748,.|dbGaP_PopFreq:0.4954,0,0.5046,0;GENEINFO=ESR1:2099;GNO;INT;R5;RS=2504068;SSR=0;VC=SNV;dbSNPBuildID=100	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000007.14	22006602	rs1627533	C	A	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=28.73;SOR=1.609;COMMON;FREQ=1000Genomes:0.5339,0.4661,.|ALSPAC:0.5999,0.4001,.|Daghestan:0.4885,0.5115,.|Estonian:0.6359,0.3641,.|GENOME_DK:0.7,0.3,.|GoNL:0.6092,0.3908,.|HapMap:0.5213,0.4787,.|KOREAN:0.5488,0.4508,0.0003415|NorthernSweden:0.575,0.425,.|Qatari:0.5509,0.4491,.|SGDP_PRJ:0.3607,0.6393,.|Siberian:0.4,0.6,.|TOPMED:0.5328,0.4672,.|TWINSUK:0.603,0.397,.|dbGaP_PopFreq:0.6432,0.3568,0;GNO;RS=1627533;SSR=0;VC=SNV;dbSNPBuildID=89	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000007.14	22006608	.	T	A	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=30.97;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000007.14	56232355	.	T	A	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=2.303	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000007.14	56232442	rs7777657	T	C	126.96	PASS	AC=2;AF=1.00;AN=2;DP=5;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=25.39;SOR=1.022;COMMON;FREQ=1000Genomes:0.4143,0.5857,.|ALSPAC:0.1946,0.8054,.|Estonian:0.2546,0.7454,.|GENOME_DK:0.225,0.775,.|GoNL:0.2194,0.7806,.|KOREAN:0.6536,0.3464,.|Korea1K:0.6381,0.3619,.|NorthernSweden:0.2033,0.7967,.|Qatari:0.3148,0.6852,.|SGDP_PRJ:0.2412,0.7588,.|Siberian:0.36,0.64,.|TOMMO:0.6449,0.3551,.|TOPMED:0.3102,0.6898,.|TWINSUK:0.2004,0.7996,.|dbGaP_PopFreq:0.3404,0.6596,0;GNO;RS=7777657;SSR=0;VC=SNV;dbSNPBuildID=116	GT:AD:DP:GQ:PL	1/1:0,5:5:15:141,15,0
+NC_000007.14	56232453	.	C	G	126.96	PASS	AC=2;AF=1.00;AN=2;DP=5;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=25.39;SOR=1.022	GT:AD:DP:GQ:PL	1/1:0,5:5:15:141,15,0
+NC_000007.14	106565287	.	G	A	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000007.14	130959660	.	T	A	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000008.11	76552530	.	C	T	35.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=23.00;QD=27.24;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000008.11	76552534	.	A	G	35.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=23.00;QD=28.20;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000008.11	93613657	rs1586212868	T	C	209.05	PASS	AC=2;AF=1.00;AN=2;DP=10;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=23.23;SOR=0.892;FREQ=KOREAN:0.9979,0.002053;GENEINFO=LINC00535:642924;GNO;INT;RS=1586212868;SSR=0;VC=SNV;dbSNPBuildID=154	GT:AD:DP:GQ:PL	1/1:0,9:9:27:223,27,0
+NC_000008.11	93613725	rs1370745959	T	C	265.04	PASS	AC=2;AF=1.00;AN=2;DP=10;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=33.13;SOR=0.693;FREQ=GnomAD:1,1.428e-05|TOPMED:1,1.133e-05|dbGaP_PopFreq:1,0;GENEINFO=LINC00535:642924;GNO;INT;RS=1370745959;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	1/1:0,8:8:24:279,24,0
+NC_000008.11	93613745	.	T	C	166.14	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=29.56;SOR=3.258	GT:AD:DP:GQ:PL	1/1:0,4:4:12:180,12,0
+NC_000009.12	88167769	rs150973697	T	C	41.32	MQ_filter	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=32.00;QD=20.66;SOR=0.693;FREQ=1000Genomes:0.9952,.,0.004792|GnomAD:0.9962,.,0.003759|TOPMED:0.9961,.,0.003933|dbGaP_PopFreq:0.9999,0,0.0001394;GNO;RS=150973697;SSR=0;VC=SNV;dbSNPBuildID=134	GT:AD:DP:GQ:PL	1/1:0,2:2:6:53,6,0
+NC_000009.12	88167770	.	C	G	41.32	MQ_filter	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=32.00;QD=20.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:53,6,0
+NC_000009.12	95436174	.	G	C	38.3	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=57.03;QD=9.58;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,4:4:11:52,11,0
+NC_000009.12	95436226	.	G	A	31.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.674;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=57.03;MQRankSum=0.000;QD=15.82;ReadPosRankSum=0.674;SOR=1.447	GT:AD:DP:GQ:PL	0/1:1,1:2:19:39,0,19
+NC_000009.12	95436228	.	G	C	31.64	PASS	AC=1;AF=0.500;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;MQRankSum=0.000;QD=15.82;SOR=1.447	GT:AD:DP:GQ:PL	0/1:1,1:2:19:39,0,19
+NC_000009.12	95436231	.	T	A	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=30.62;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000009.12	113460182	.	T	C	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000009.12	113460246	rs10981790	C	T	52.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=26.16;SOR=0.693;COMMON;FREQ=1000Genomes:0.8219,.,0.1781|ALSPAC:0.8313,.,0.1687|Estonian:0.9027,.,0.09732|ExAC:0.8405,.,0.1595|GENOME_DK:0.775,.,0.225|GnomAD_exomes:0.8461,.,0.1539|GoNL:0.8567,.,0.1433|KOREAN:0.6604,.,0.3396|NorthernSweden:0.825,.,0.175|Qatari:0.838,.,0.162|SGDP_PRJ:0.3833,.,0.6167|Siberian:0.4167,.,0.5833|TOMMO:0.7045,.,0.2955|TOPMED:0.8482,.,0.1518|TWINSUK:0.8341,.,0.1659|Vietnamese:0.7356,.,0.2644|dbGaP_PopFreq:0.916,0,0.08404;GENEINFO=RGS3:5998;GNO;R5;RS=10981790;SSR=0;U5;VC=SNV;dbSNPBuildID=120	GT:AD:DP:GQ:PL	1/1:0,2:2:6:64,6,0
+NC_000009.12	113460258	rs1368642944	T	C	52.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=26.16;SOR=0.693;GENEINFO=RGS3:5998;NSM;R5;RS=1368642944;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	1/1:0,2:2:6:64,6,0
+NC_000010.11	3301617	rs1853826	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.5292,0.01837,0.4525|Estonian:0.419,.,0.581|GoNL:0.4639,.,0.5361|KOREAN:0.6481,0,0.3519|Korea1K:0.6528,.,0.3472|NorthernSweden:0.4933,.,0.5067|Qatari:0.4769,.,0.5231|SGDP_PRJ:0.3173,0.02163,0.6611|Siberian:0.3043,.,0.6957|TOMMO:0.6122,.,0.3878|TOPMED:0.5207,.,0.4793|Vietnamese:0.6121,.,0.3879|dbGaP_PopFreq:0.6175,0,0.3825;GNO;RS=1853826;SSR=0;VC=SNV;dbSNPBuildID=92	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000010.11	36793484	rs1449180146	A	G	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;FREQ=GnomAD:1,7.13e-06|TOPMED:1,3.778e-06|dbGaP_PopFreq:1,0;GNO;RS=1449180146;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000010.11	75263245	.	A	G	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000011.10	9074908	rs897554710	A	G	36.32	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;FREQ=TOPMED:1,7.964e-06,7.964e-06|dbGaP_PopFreq:1,0,0;GENEINFO=SCUBE2:57758;GNO;INT;RS=897554710;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000011.10	9074946	rs4061964	C	T	47.32	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=23.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.1709,.,.,0.8291|ALSPAC:0.103,.,.,0.897|Estonian:0.1386,.,.,0.8614|GoNL:0.1232,.,.,0.8768|KOREAN:0.1468,0,.,0.8532|Korea1K:0.1545,.,.,0.8455|NorthernSweden:0.1317,.,.,0.8683|Qatari:0.1065,.,.,0.8935|SGDP_PRJ:0.124,.,.,0.876|Siberian:0.03571,.,.,0.9643|TOMMO:0.1115,.,.,0.8885|TOPMED:0.1186,.,.,0.8814|TWINSUK:0.1084,.,.,0.8916|dbGaP_PopFreq:0.1512,0,0,0.8488;GENEINFO=SCUBE2:57758;GNO;INT;RS=4061964;SSR=0;VC=SNV;dbSNPBuildID=108	GT:AD:DP:GQ:PL	1/1:0,2:2:6:59,6,0
+NC_000011.10	9074964	.	C	G	47.32	PASS	AC=2;AF=1.00;AN=2;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=23.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:59,6,0
+NC_000011.10	30652323	rs413753	A	T	67.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=33.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.6376,0.3624|ALSPAC:0.5854,0.4146|Estonian:0.5687,0.4313|GENOME_DK:0.6,0.4|GnomAD:0.6497,0.3503|GoNL:0.5681,0.4319|HapMap:0.5854,0.4146|KOREAN:0.6515,0.3485|NorthernSweden:0.5467,0.4533|Qatari:0.6343,0.3657|SGDP_PRJ:0.3376,0.6624|Siberian:0.4286,0.5714|TOMMO:0.6177,0.3823|TOPMED:0.6543,0.3457|TWINSUK:0.5887,0.4113|Vietnamese:0.5,0.5|dbGaP_PopFreq:0.6175,0.3825;GNO;RS=413753;SSR=0;VC=SNV;dbSNPBuildID=80	GT:AD:DP:GQ:PL	1/1:0,2:2:6:79,6,0
+NC_000011.10	30652344	rs1744420	T	C	67.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=33.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.5166,.,0.4834|ALSPAC:0.5838,.,0.4162|Daghestan:0.9964,.,0.003578|Estonian:0.5692,.,0.4308|GENOME_DK:0.6,.,0.4|GnomAD:0.5654,.,0.4346|GoNL:0.5671,.,0.4329|KOREAN:0.5407,0,0.4593|NorthernSweden:0.545,.,0.455|Qatari:0.6065,.,0.3935|SGDP_PRJ:0.3405,.,0.6595|Siberian:0.4286,.,0.5714|TOMMO:0.544,.,0.456|TOPMED:0.5643,.,0.4357|TWINSUK:0.5876,.,0.4124|Vietnamese:0.4135,.,0.5865|dbGaP_PopFreq:0.6677,0,0.3323;GNO;RS=1744420;SSR=0;VC=SNV;dbSNPBuildID=89	GT:AD:DP:GQ:PL	1/1:0,2:2:6:79,6,0
+NC_000011.10	63953966	.	T	C	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=26.80;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000011.10	63953969	rs769516409	C	T	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=26.00;SOR=1.609;FREQ=ExAC:1,8.246e-06|GnomAD_exomes:1,3.982e-06;GENEINFO=NAA40:79829;GNO;INT;RS=769516409;SSR=0;VC=SNV;dbSNPBuildID=144	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000011.10	72276008	rs908403928	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=40.50;QD=18.66;SOR=0.693;FREQ=GnomAD:1,1.428e-05|TOPMED:1,1.133e-05|dbGaP_PopFreq:1,0;GNO;RS=908403928;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000011.10	75149071	.	G	T	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000011.10	89007100	.	A	T	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=58.52;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000011.10	102282666	.	T	C	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000011.10	102703805	.	T	A	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=30.02;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000011.10	102703813	rs1384051907	C	T	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=31.98;SOR=0.693;FREQ=GnomAD:1,7.129e-06|TOPMED:1,1.133e-05|dbGaP_PopFreq:1,0;GENEINFO=MMP27:64066;GNO;INT;RS=1384051907;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000011.10	102703814	.	A	G	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=27.51;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000012.12	4416924	.	T	C	35.48	PASS	AC=2;AF=1.00;AN=2;DP=3;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=28.08;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000012.12	92322647	.	T	A	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000012.12	110551661	.	T	C	35.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=31.00;QD=29.03;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000012.12	110551667	.	T	G	35.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=31.00;QD=30.67;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000012.12	118301099	.	T	G	121.84	PASS	AC=2;AF=1.00;AN=2;DP=3;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=54.17;QD=26.61;SOR=1.179	GT:AD:DP:GQ:PL	1/1:0,3:3:9:135,9,0
+NC_000012.12	118301102	.	T	C	121.84	PASS	AC=2;AF=1.00;AN=2;DP=3;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=54.17;QD=29.20;SOR=1.179	GT:AD:DP:GQ:PL	1/1:0,3:3:9:135,9,0
+NC_000013.11	37799256	rs604068	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.05851,.,.,0.9415|ALSPAC:0,.,.,1|GENOME_DK:0,.,.,1|GnomAD:0.05852,.,.,0.9415|GoNL:0.001002,.,.,0.999|HapMap:0.1243,.,.,0.8757|KOREAN:0,0,0,1|Korea1K:0,.,.,1|NorthernSweden:0,.,.,1|Qatari:0.02315,.,.,0.9769|SGDP_PRJ:0.02518,.,.,0.9748|Siberian:0,.,.,1|TOMMO:0,.,.,1|TOPMED:0.06261,.,.,0.9374|TWINSUK:0.0002697,.,.,0.9997|Vietnamese:0,.,.,1|dbGaP_PopFreq:0.03694,.,.,0.9631;GENEINFO=TRPC4:7223;GNO;INT;R5;RS=604068;SSR=0;VC=SNV;dbSNPBuildID=83	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000013.11	89932626	rs11069953	G	A	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=42.00;QD=18.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.4421,0.5579,.|ALSPAC:0.5075,0.4925,.|Estonian:0.4522,0.5478,.|GENOME_DK:0.5,0.5,.|GnomAD:0.4668,0.5332,.|GoNL:0.5341,0.4659,.|HapMap:0.4477,0.5523,.|KOREAN:0.4966,0.5034,.|Korea1K:0.5066,0.4934,.|NorthernSweden:0.5317,0.4683,.|Qatari:0.4907,0.5093,.|SGDP_PRJ:0.3058,0.6942,.|Siberian:0.3261,0.6739,.|TOMMO:0.4117,0.5883,.|TOPMED:0.4772,0.5228,.|TWINSUK:0.5183,0.4817,.|Vietnamese:0.5571,0.4429,.|dbGaP_PopFreq:0.5943,0.4057,0;GNO;RS=11069953;SSR=0;VC=SNV;dbSNPBuildID=120	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000014.9	49879862	.	A	G	78.32	PASS	AC=2;AF=1.00;AN=2;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=34.42;SOR=2.303	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000014.9	66674368	rs560653016	G	A	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=32.91;SOR=0.693;FREQ=1000Genomes:0.9998,0.0001997,.|GnomAD:1,1.429e-05,.|TOPMED:1,3.186e-05,.|dbGaP_PopFreq:1,0,0;GENEINFO=GPHN:10243;GNO;INT;RS=560653016;SSR=0;VC=SNV;dbSNPBuildID=142	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000014.9	77349387	.	G	C	42.96	PASS	AC=2;AF=1.00;AN=2;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=7.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,6:6:15:57,15,0
+NC_000014.9	96379003	.	T	A	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=31.45;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000014.9	96742520	rs4905538	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.7194,0.2806|ALSPAC:0.4528,0.5472|Estonian:0.4667,0.5333|GENOME_DK:0.475,0.525|GnomAD:0.5739,0.4261|GoNL:0.4699,0.5301|KOREAN:0.9993,0.0006845|Korea1K:0.9989,0.001092|NorthernSweden:0.475,0.525|Qatari:0.5509,0.4491|SGDP_PRJ:0.3519,0.6481|Siberian:0.5,0.5|TOMMO:0.999,0.0009547|TOPMED:0.5862,0.4138|TWINSUK:0.438,0.562|Vietnamese:0.986,0.01402|dbGaP_PopFreq:0.4983,0.5017;GENEINFO=LINC02299:105370646;GNO;INT;RS=4905538;SSR=0;VC=SNV;dbSNPBuildID=111	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000015.10	68672579	rs936840646	A	G	62.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=-0.967;DP=3;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;MQRankSum=0.000;QD=20.88;ReadPosRankSum=0.431;SOR=0.223;FREQ=GnomAD:1,1.426e-05|TOPMED:1,7.556e-06|dbGaP_PopFreq:0.9999,7.117e-05;GENEINFO=CORO2B:10391;GNO;INT;RS=936840646;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	0/1:1,2:3:36:70,0,36
+NC_000015.10	68672584	.	T	C	62.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=-0.967;DP=3;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;MQRankSum=0.000;QD=20.88;ReadPosRankSum=0.431;SOR=0.223	GT:AD:DP:GQ:PL	0/1:1,2:3:36:70,0,36
+NC_000015.10	68672695	.	A	C	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=33.27;SOR=2.303	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000015.10	74671915	.	T	A	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=27.76;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000015.10	74671916	.	A	G	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=29.09;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000016.10	20017800	.	C	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000016.10	74634658	.	G	C	39.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=19.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:51,6,0
+NC_000016.10	74634667	rs8044278	T	G	39.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=19.66;SOR=0.693;COMMON;FREQ=1000Genomes:0.1244,.,0.8756|ALSPAC:0.1663,.,0.8337|Estonian:0.1819,.,0.8181|GENOME_DK:0.125,.,0.875|GnomAD:0.1426,.,0.8574|KOREAN:0.1863,0,0.8137|NorthernSweden:0.1967,.,0.8033|Qatari:0.1157,.,0.8843|SGDP_PRJ:0.1175,.,0.8825|Siberian:0.1852,.,0.8148|TOMMO:0.1823,.,0.8177|TOPMED:0.1372,.,0.8628|TWINSUK:0.182,.,0.818|Vietnamese:0.1604,.,0.8396|dbGaP_PopFreq:0.1583,.,0.8417;GENEINFO=RFWD3:55159;GNO;INT;RS=8044278;SSR=0;VC=SNV;dbSNPBuildID=116	GT:AD:DP:GQ:PL	1/1:0,2:2:6:51,6,0
+NC_000017.11	6239963	.	C	T	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000017.11	6239998	.	T	C	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000017.11	11828211	.	C	A	67.32	MQ_filter	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=35.00;QD=33.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:79,6,0
+NC_000017.11	11828212	rs1970569282	A	G	67.32	MQ_filter	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=35.00;QD=33.66;SOR=0.693;FREQ=TOPMED:1,3.778e-06|dbGaP_PopFreq:1,0;GENEINFO=DNAH9:1770;GNO;INT;R3;R5;RS=1970569282;SSR=0;VC=SNV;dbSNPBuildID=155	GT:AD:DP:GQ:PL	1/1:0,2:2:6:79,6,0
+NC_000017.11	75189645	rs1206370378	A	G	34.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=22.00;QD=34.48;SOR=1.609;FREQ=TOMMO:0.9999,5.967e-05|TOPMED:1,3.778e-06|dbGaP_PopFreq:1,0;GNO;RS=1206370378;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	1/1:0,1:1:3:44,3,0
+NC_000017.11	75189651	.	T	G	34.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=22.00;QD=34.48;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:44,3,0
+NC_000017.11	75189655	.	A	G	34.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=22.00;QD=34.48;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:44,3,0
+NC_000017.11	80849787	.	G	C	41.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=20.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:53,6,0
+NC_000017.11	80849797	rs1045974273	C	T	41.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=20.66;SOR=0.693;FREQ=TOPMED:1,1.133e-05,.|dbGaP_PopFreq:1,0,0;GENEINFO=RPTOR:57521;GNO;INT;RS=1045974273;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	1/1:0,2:2:6:53,6,0
+NC_000018.10	53090399	rs906023757	A	G	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;FREQ=TOPMED:1,3.778e-06|dbGaP_PopFreq:1,0;GENEINFO=DCC:1630;GNO;INT;RS=906023757;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000018.10	53090415	.	A	G	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000018.10	53090441	rs2042985885	T	C	31.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=15.66;SOR=0.693;FREQ=dbGaP_PopFreq:1,0;GENEINFO=DCC:1630;GNO;INT;RS=2042985885;SSR=0;VC=SNV	GT:AD:DP:GQ:PL	1/1:0,2:2:6:43,6,0
+NC_000018.10	53090442	.	C	G	31.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=15.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:43,6,0
+NC_000019.10	4859264	rs1599173051	A	G	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=58.00;QD=18.66;SOR=0.693;FREQ=TOPMED:1,3.778e-06|dbGaP_PopFreq:1,0;GENEINFO=PLIN3:10226;GNO;INT;RS=1599173051;SSR=0;VC=SNV;dbSNPBuildID=155	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000019.10	33001882	.	G	T	67.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=33.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:79,6,0
+NC_000019.10	33001885	.	T	C	67.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=33.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:79,6,0
+NC_000019.10	56666472	.	G	A	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000019.10	57736667	.	G	C	40.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=20.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:52,6,0
+NC_000019.10	57736691	rs12232820	C	A	40.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=20.16;SOR=0.693;COMMON;FREQ=1000Genomes:0.5411,0.4589,.,.|ALSPAC:0.67,0.33,.,.|Estonian:0.6348,0.3652,.,.|GENOME_DK:0.725,0.275,.,.|GnomAD:0.5349,0.4651,.,.|GoNL:0.6984,0.3016,.,.|HapMap:0.3538,0.6462,.,.|KOREAN:0.4154,0.5846,0,.|NorthernSweden:0.7383,0.2617,.,.|PRJEB37584:0.4793,0.5207,.,.|Qatari:0.5463,0.4537,.,.|SGDP_PRJ:0.3343,0.6657,.,.|Siberian:0.2727,0.7273,.,.|TOMMO:0.3675,0.6325,.,.|TOPMED:0.5263,0.4737,.,.|TWINSUK:0.6696,0.3304,.,.|Vietnamese:0.5905,0.4095,.,.|dbGaP_PopFreq:0.6624,0.3376,.,0;GNO;RS=12232820;SSR=0;VC=SNV;dbSNPBuildID=120	GT:AD:DP:GQ:PL	1/1:0,2:2:6:52,6,0
+NC_000020.11	5940976	.	A	G	35.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=33.00;QD=31.93;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000020.11	5940982	.	T	C	35.48	MQ_filter	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=33.00;QD=28.31;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000020.11	8770312	rs1982610037	T	C	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693;FREQ=dbGaP_PopFreq:1,0;GENEINFO=PLCB1:23236;GNO;INT;RS=1982610037;SSR=0;VC=SNV	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000020.11	34313810	.	A	C	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000020.11	44426041	.	G	C	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=25.88;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000020.11	44426045	.	A	T	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=29.07;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000020.11	45379024	.	C	T	52.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=26.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:64,6,0
+NC_000020.11	45379034	rs2231610	C	T	52.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=26.16;SOR=0.693;COMMON;FREQ=1000Genomes:0.6635,.,0.3365|ALSPAC:0.4063,.,0.5937|Estonian:0.4395,.,0.5605|GENOME_DK:0.4,.,0.6|GoNL:0.4158,.,0.5842|KOREAN:0.7427,0.0003413,0.257|NorthernSweden:0.375,.,0.625|Qatari:0.4537,.,0.5463|SGDP_PRJ:0.3164,.,0.6836|Siberian:0.2609,.,0.7391|TOPMED:0.5598,.,0.4402|TWINSUK:0.3722,.,0.6278|dbGaP_PopFreq:0.3659,0,0.6341;GENEINFO=TP53TG5:27296|SYS1-DBNDD2:767557;GNO;INT;R5;RS=2231610;SSR=0;VC=SNV;dbSNPBuildID=98	GT:AD:DP:GQ:PL	1/1:0,2:2:6:64,6,0
+NC_000020.11	47485363	.	C	G	64.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.000;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=50.47;MQRankSum=-1.834;QD=10.77;ReadPosRankSum=0.842;SOR=0.693	GT:AD:DP:GQ:PL	0/1:4,2:6:72:72,0,162
+NC_000020.11	47485364	rs900504983	G	A	64.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.842;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=50.47;MQRankSum=-1.834;QD=10.77;ReadPosRankSum=0.842;SOR=0.693;FREQ=GnomAD:1,7.144e-06|TOPMED:1,3.778e-06|dbGaP_PopFreq:1,0;GNO;RS=900504983;SSR=0;VC=SNV;dbSNPBuildID=150	GT:AD:DP:GQ:PL	0/1:4,2:6:72:72,0,162
+NC_000020.11	47485368	rs1360250386	G	A	64.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.842;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=50.47;MQRankSum=-1.834;QD=10.77;ReadPosRankSum=0.842;SOR=0.693;FREQ=Estonian:0.9998,0.0002232|GnomAD:1,2.143e-05|KOREAN:0.9997,0.0003422|TOMMO:0.9996,0.0004177|TOPMED:1,1.511e-05|dbGaP_PopFreq:0.9999,5.4e-05;GNO;RS=1360250386;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	0/1:4,2:6:72:72,0,162
+NC_000020.11	47485369	.	T	C	64.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.000;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=50.47;MQRankSum=-1.834;QD=10.77;ReadPosRankSum=0.842;SOR=0.693	GT:AD:DP:GQ:PL	0/1:4,2:6:72:72,0,162
+NC_000020.11	47485376	.	T	G	64.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=-1.834;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=50.47;MQRankSum=-1.834;QD=10.77;ReadPosRankSum=0.842;SOR=0.693	GT:AD:DP:GQ:PL	0/1:4,2:6:72:72,0,162
+NC_000020.11	47485379	.	A	T	64.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.431;DP=6;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=50.47;MQRankSum=-1.834;QD=10.77;ReadPosRankSum=0.842;SOR=0.693	GT:AD:DP:GQ:PL	0/1:4,2:6:72:72,0,162
+NC_000020.11	49339697	.	T	C	31.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.000;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=57.08;MQRankSum=-0.674;QD=15.82;ReadPosRankSum=0.674;SOR=0.693	GT:AD:DP:GQ:PL	0/1:1,1:2:39:39,0,39
+NC_000020.11	49339722	.	T	C	31.64	PASS	AC=1;AF=0.500;AN=2;BaseQRankSum=0.000;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=57.08;MQRankSum=-0.674;QD=15.82;ReadPosRankSum=0.674;SOR=0.693	GT:AD:DP:GQ:PL	0/1:1,1:2:39:39,0,39
+NC_000020.11	49339724	.	T	A	31.64	PASS	AC=1;AF=0.500;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=57.08;MQRankSum=-0.674;QD=15.82;SOR=0.693	GT:AD:DP:GQ:PL	0/1:1,1:2:39:39,0,39
+NC_000022.11	23634600	rs131434	G	T	37.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.66;SOR=0.693;FREQ=1000Genomes:0.001597,.,0.9984|ALSPAC:0,.,1|GENOME_DK:0,.,1|GnomAD:0.0001498,.,0.9999|HapMap:0.003049,.,0.997|KOREAN:0.0256,0,0.9744|Korea1K:0.02129,.,0.9787|NorthernSweden:0,.,1|Qatari:0,.,1|SGDP_PRJ:0.001799,.,0.9982|Siberian:0,.,1|TOMMO:0.01856,.,0.9814|TOPMED:0.0003098,.,0.9997|TWINSUK:0,.,1|Vietnamese:0,.,1|dbGaP_PopFreq:5.4e-05,.,0.9999;GENEINFO=DRICH1:51233;GNO;INT;R5;RS=131434;SSR=0;VC=SNV;dbSNPBuildID=78	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
+NC_000022.11	25324388	.	T	C	36.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000022.11	27849633	.	T	C	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=32.71;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000022.11	27849634	.	T	C	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=33.09;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000023.11	41039908	.	G	C	54.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=41.00;QD=27.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:66,6,0
+NC_000023.11	41039917	.	A	G	54.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=41.00;QD=27.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:66,6,0
+NC_000023.11	53001618	.	T	A	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=28.51;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000023.11	53001619	.	C	G	35.48	PASS	AC=2;AF=1.00;AN=2;DP=1;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=37.55;SOR=1.609	GT:AD:DP:GQ:PL	1/1:0,1:1:3:45,3,0
+NC_000023.11	53392757	.	T	C	36.32	PASS	AC=2;AF=1.00;AN=2;DP=3;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=49.32;QD=18.16;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:48,6,0
+NC_000023.11	100676754	.	G	C	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=48.00;QD=30.35;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000023.11	100676764	.	T	C	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=48.00;QD=30.75;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000023.11	100676765	rs1291356914	G	A	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=48.00;QD=29.53;SOR=0.693;FREQ=GnomAD:1,1.923e-05|TOPMED:1,7.556e-06|dbGaP_PopFreq:1,0;GENEINFO=SYTL4:94121;GNO;INT;RS=1291356914;SSR=0;VC=SNV;dbSNPBuildID=151	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NC_000023.11	100676768	.	A	C	78.32	PASS	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=48.00;QD=31.44;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:90,6,0
+NT_167218.1	87598	.	G	A	37.32	MQ_filter	AC=2;AF=1.00;AN=2;DP=2;ExcessHet=0.0000;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=27.00;QD=18.66;SOR=0.693	GT:AD:DP:GQ:PL	1/1:0,2:2:6:49,6,0
